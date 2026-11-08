@@ -1,15 +1,16 @@
 [
   {
-    "id": "328181e89d07e5e4cfbf",
-    "title": "田野之间",
-    "caption": "山间茶田与一座白色小屋。",
-    "album": "land",
-    "event": "景德镇",
-    "date": "2024-10-07",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "3f543cdf8d53a2270720bd14-srgb-v1",
+    "id": "16ba37c7153d1deb0e95",
+    "title": "观看",
+    "caption": "观看",
+    "album": "city",
+    "event": "春节",
+    "date": "2024-02-08",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "afd1798347493a25dff1400c-jpeg-v2",
     "width": 6000,
     "height": 4000,
     "variants": [
@@ -17,11 +18,6 @@
         "bound": 480,
         "width": 480,
         "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
       },
       {
         "bound": 1600,
@@ -33,127 +29,23 @@
         "width": 2560,
         "height": 1707
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "9708f72c6d12cec3cd53",
-    "title": "春天的颜色",
-    "caption": "花丛里的橙、白与蓝。",
-    "album": "land",
-    "event": "独墅湖公园",
-    "date": "2024-04-10",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "a2682fdbc79674addb5a90b4-srgb-v1",
-    "width": 3888,
-    "height": 5184,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 360,
-        "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 720,
-        "height": 960
-      },
-      {
-        "bound": 1600,
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "bound": 2560,
-        "width": 1920,
-        "height": 2560
-      }
-    ]
-  },
-  {
-    "id": "95d035282734283debbe",
-    "title": "柳岸",
-    "caption": "树影围合着平静的水面。",
-    "album": "water",
-    "event": "仓街东园",
-    "date": "2024-04-13",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "4c6e2c1b081c2964505e82d4-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "2809103db248b5cf2ed8",
-    "title": "日落之前",
-    "caption": "落日在枝叶间，光铺满湖面。",
-    "album": "water",
-    "event": "杂",
-    "date": "2024-04-27",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "059c81c9d2be581322ba3f5f-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "0755b50f7a672847cb1a",
-    "title": "潮汐",
-    "caption": "礁石、浅滩与远处的人。",
-    "album": "water",
-    "event": "普吉岛",
-    "date": "2024-08-26",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "9c99284b2c9858c9f7cb5233-srgb-v1",
+    "id": "2039d9ee209d58cbd8a5",
+    "title": "一扇窗",
+    "caption": "一扇窗",
+    "album": "city",
+    "event": "春节",
+    "date": "2024-02-09",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "fa435a0c699b64c64a7a4d2b-jpeg-v2",
     "width": 6000,
     "height": 4000,
     "variants": [
@@ -161,11 +53,6 @@
         "bound": 480,
         "width": 480,
         "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
       },
       {
         "bound": 1600,
@@ -177,559 +64,23 @@
         "width": 2560,
         "height": 1707
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "7f015c748b9bfc6f5bb5",
-    "title": "山与城",
-    "caption": "从山上望向层叠的城市。",
+    "id": "e2d1403c62a8d0f96a35",
+    "title": "向前",
+    "caption": "向前",
     "album": "city",
-    "event": "香港",
-    "date": "2024-09-09",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "6966604aaca73bc7578a155d-srgb-v1",
-    "width": 6000,
-    "height": 4000,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1707
-      }
-    ]
-  },
-  {
-    "id": "fa60ae76e8802a0e2096",
-    "title": "巷口",
-    "caption": "明暗交界处的一条小巷。",
-    "album": "city",
-    "event": "山塘街",
-    "date": "2024-03-16",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "aa8084fb1d7f547f6f6d510b-srgb-v1",
-    "width": 3888,
-    "height": 5184,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 360,
-        "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 720,
-        "height": 960
-      },
-      {
-        "bound": 1600,
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "bound": 2560,
-        "width": 1920,
-        "height": 2560
-      }
-    ]
-  },
-  {
-    "id": "5d48be6f176139ca9839",
-    "title": "经过",
-    "caption": "骑车的人穿过窄巷。",
-    "album": "city",
-    "event": "山塘街",
-    "date": "2024-03-16",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "d9fc20980073bac54a1722ce-srgb-v1",
-    "width": 3888,
-    "height": 5184,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 360,
-        "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 720,
-        "height": 960
-      },
-      {
-        "bound": 1600,
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "bound": 2560,
-        "width": 1920,
-        "height": 2560
-      }
-    ]
-  },
-  {
-    "id": "06082358279fd8ed6b2f",
-    "title": "水巷",
-    "caption": "沿河延伸的房屋与石阶。",
-    "album": "water",
-    "event": "山塘街",
-    "date": "2024-03-16",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "e6bab26877b6f47a397573da-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "3b0ef37c2930e378c41c",
-    "title": "小路",
-    "caption": "田间小路穿过黄花与树木。",
-    "album": "land",
-    "event": "小白家",
-    "date": "2024-03-24",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "f903ef598b540ba7b2839f4e-srgb-v1",
-    "width": 3888,
-    "height": 5184,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 360,
-        "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 720,
-        "height": 960
-      },
-      {
-        "bound": 1600,
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "bound": 2560,
-        "width": 1920,
-        "height": 2560
-      }
-    ]
-  },
-  {
-    "id": "1960cfd29d85579ac938",
-    "title": "红砖与春天",
-    "caption": "红砖小屋旁的一片黄色。",
-    "album": "land",
-    "event": "小白家",
-    "date": "2024-03-24",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "491b30e6475119fa73352a57-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "c99fec862bb879c3706d",
-    "title": "白色建筑",
-    "caption": "水面上的建筑倒影。",
-    "album": "city",
-    "event": "清明假期",
-    "date": "2024-04-05",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "8ffd422cf80cab1ae3f03043-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "32c9d62a15570181bfc0",
-    "title": "白花",
-    "caption": "白色花瓣与明亮的花心。",
-    "album": "land",
-    "event": "独墅湖公园",
-    "date": "2024-04-10",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "13d99f0ce7bd9a7cf912a1aa-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "f36f67ddedb79bae2e3e",
-    "title": "靠岸",
-    "caption": "暮色里的船与柳树。",
-    "album": "water",
-    "event": "杂",
-    "date": "2024-04-27",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "34d20a03431fef2aa80fd327-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "674a5dbeec62ea6cd20d",
-    "title": "远处",
-    "caption": "芦苇、湖面和远处的城市。",
-    "album": "water",
-    "event": "落日",
-    "date": "2024-09-01",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "c95194b112220cc4782fc06b-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "e5eee2e4fbdd2214bf70",
-    "title": "等候起飞",
-    "caption": "航站楼窗外的飞机与山。",
-    "album": "city",
-    "event": "香港",
-    "date": "2024-09-09",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "9c57e51db81ae56f7b044760-srgb-v1",
-    "width": 6000,
-    "height": 4000,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1707
-      }
-    ]
-  },
-  {
-    "id": "652521e6cc14d4818211",
-    "title": "园中",
-    "caption": "白墙与柳枝围合的小径。",
-    "album": "city",
-    "event": "锦溪",
-    "date": "2024-09-14",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "8b2fa7950f7caabc870a7be7-srgb-v1",
-    "width": 3888,
-    "height": 5184,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 360,
-        "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 720,
-        "height": 960
-      },
-      {
-        "bound": 1600,
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "bound": 2560,
-        "width": 1920,
-        "height": 2560
-      }
-    ]
-  },
-  {
-    "id": "37ea00abec418389cc23",
-    "title": "临水人家",
-    "caption": "老屋、绿树与水中的倒影。",
-    "album": "water",
-    "event": "锦溪",
-    "date": "2024-09-14",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "e2bdcf66ec14b9599f296c0f-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "dc7c2192c4f80efe9dd4",
-    "title": "一池平静",
-    "caption": "建筑与树木映在池中。",
-    "album": "water",
-    "event": "锦溪",
-    "date": "2024-09-14",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "c9b5abf3d580fb3a1dc77c5b-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "1fa71a47f9ac5f4912e1",
-    "title": "树影",
-    "caption": "阳光穿过路旁的树。",
-    "album": "land",
-    "event": "上海",
-    "date": "2024-09-22",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "991e28ba29bc47a001e128fe-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "ee89eb2507c063299904",
-    "title": "林间",
-    "caption": "林间小径向前延伸。",
-    "album": "land",
-    "event": "上方山",
-    "date": "2024-11-02",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "6f3e821c05962ce0cb03b4ff-srgb-v1",
+    "event": "春节",
+    "date": "2024-02-13",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "0d2866b180a4d829cb552676-jpeg-v2",
     "width": 4000,
     "height": 6000,
     "variants": [
@@ -737,11 +88,6 @@
         "bound": 480,
         "width": 320,
         "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 640,
-        "height": 960
       },
       {
         "bound": 1600,
@@ -753,19 +99,688 @@
         "width": 1707,
         "height": 2560
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "ac268105eca005a53ed8",
-    "title": "秋日花田",
-    "caption": "橙色花朵铺满树下的草地。",
+    "id": "2272627ac3430ab5e844",
+    "title": "天光",
+    "caption": "天光",
+    "album": "city",
+    "event": "春节",
+    "date": "2024-02-15",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "94f97cbd7e770722ee4c9e7f-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "5d6db35d49370a0c6089",
+    "title": "另一座水城",
+    "caption": "另一座水城",
+    "album": "city",
+    "event": "春节",
+    "date": "2024-02-16",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "98d5e72aa10947eb96937ac2-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "c1022b1ae5b498e6335e",
+    "title": "慢船",
+    "caption": "慢船",
+    "album": "water",
+    "event": "山塘街",
+    "date": "2024-03-16",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "f4b1cd6657d7aaab1a0015e9-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "7685ed2ca1025c93feb9",
+    "title": "巷深",
+    "caption": "巷深",
+    "album": "water",
+    "event": "山塘街",
+    "date": "2024-03-16",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "98a83b731c8e73bdded96672-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "68cf03e064983e0346d2",
+    "title": "春天的田野",
+    "caption": "春天的田野",
+    "album": "land",
+    "event": "小白家",
+    "date": "2024-03-24",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "f2dc733c40ff9550b6d916c7-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "c0b0eb867e77f69a1d35",
+    "title": "春水",
+    "caption": "春水",
+    "album": "water",
+    "event": "锦溪古镇",
+    "date": "2024-03-30",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "896d050ceea35528c0566f01-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "aad2b05d450bcedd3dd1",
+    "title": "圆窗",
+    "caption": "圆窗",
+    "album": "water",
+    "event": "清明假期",
+    "date": "2024-04-05",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "5afda8ab41d40ade28890372-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "578e205ec80ef7642f62",
+    "title": "白色花瓣",
+    "caption": "白色花瓣",
+    "album": "land",
+    "event": "独墅湖公园",
+    "date": "2024-04-10",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "eaf9ebd80d643b8d1f03b2da-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "32c9d62a15570181bfc0",
+    "title": "小小花园",
+    "caption": "小小花园",
+    "album": "land",
+    "event": "独墅湖公园",
+    "date": "2024-04-10",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "13d99f0ce7bd9a7cf912a1aa-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "4d0cfc19ee61ed77bbd8",
+    "title": "林间小憩",
+    "caption": "林间小憩",
+    "album": "land",
+    "event": "仓街东园",
+    "date": "2024-04-13",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "b97faa1a0ddaa48fd5c59360-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "1b73199b4cf2bc95f580",
+    "title": "暮色",
+    "caption": "暮色",
+    "album": "land",
+    "event": "杂",
+    "date": "2024-04-18",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "e09331fa704d69faa765591d-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "67bbe63d5e82915e6d52",
+    "title": "日落金鸡湖",
+    "caption": "日落金鸡湖",
+    "album": "water",
+    "event": "落日",
+    "date": "2024-09-01",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "ff7851ff9e1a17b5bb9b2448-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "3079d698e56e349dbe8e",
+    "title": "荷塘",
+    "caption": "荷塘",
+    "album": "water",
+    "event": "锦溪",
+    "date": "2024-09-14",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "d26c4afdc7b5cf24e13c1685-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "10793a09a8b2caf0612d",
+    "title": "岸上人家",
+    "caption": "岸上人家",
+    "album": "water",
+    "event": "锦溪",
+    "date": "2024-09-14",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "d48c49099a050927cdbdd81b-jpeg-v2",
+    "width": 5184,
+    "height": 3888,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 360
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1920
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "8f488fe31c05eb5bb780",
+    "title": "树下小径",
+    "caption": "树下小径",
+    "album": "land",
+    "event": "上海",
+    "date": "2024-09-22",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "3464ff7464723137ed330c74-jpeg-v2",
+    "width": 3888,
+    "height": 5184,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1920,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "9ccfd7a34f7031cd788d",
+    "title": "檐角",
+    "caption": "檐角",
+    "album": "city",
+    "event": "景德镇",
+    "date": "2024-10-03",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "d55647dc5baa0c130b83e3a0-jpeg-v2",
+    "width": 3936,
+    "height": 2624,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "fc8822de89f08f4ea26e",
+    "title": "田野与远山",
+    "caption": "田野与远山",
+    "album": "land",
+    "event": "景德镇",
+    "date": "2024-10-05",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "322efe00d1258bdf4251533e-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "3aa8f89e3a1e07c53447",
+    "title": "青花",
+    "caption": "青花",
+    "album": "city",
+    "event": "景德镇",
+    "date": "2024-10-06",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "bce4368591588d6e84af25d6-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "0e172a277ed65ef8d334",
+    "title": "灯火",
+    "caption": "灯火",
+    "album": "city",
+    "event": "景德镇",
+    "date": "2024-10-06",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "120bf8582ea51487f2bd5d3c-jpeg-v2",
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 320,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1707,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "6ba920a6ce9bc0c0d022",
+    "title": "秋日橙色",
+    "caption": "秋日橙色",
     "album": "land",
     "event": "上方山",
     "date": "2024-11-02",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "922e14339dd703f99834d389-srgb-v1",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "b1356520f1860aa15cffc05c-jpeg-v2",
     "width": 6000,
     "height": 4000,
     "variants": [
@@ -773,11 +788,6 @@
         "bound": 480,
         "width": 480,
         "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
       },
       {
         "bound": 1600,
@@ -789,67 +799,30 @@
         "width": 2560,
         "height": 1707
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "b5b97908cdb24837ca7d",
-    "title": "店门前",
-    "caption": "自行车停在小店门外。",
-    "album": "city",
+    "id": "af50c896c33e0fb8f4cf",
+    "title": "午后光影",
+    "caption": "午后光影",
+    "album": "water",
     "event": "杂",
-    "date": "2024-11-09",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "a49516659cba18892a58896a-srgb-v1",
-    "width": 6000,
-    "height": 4000,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1707
-      }
-    ]
-  },
-  {
-    "id": "f69e7d737471ec81acd0",
-    "title": "水上光影",
-    "caption": "桥洞里的彩色光映入水中。",
-    "album": "city",
-    "event": "杂",
-    "date": "2024-11-10",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "af9b4a4f30ff46805eac9394-srgb-v1",
+    "date": "2024-11-05",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "aa6f85b70e5afca54b08b164-jpeg-v2",
     "width": 3008,
     "height": 2000,
     "variants": [
       {
         "bound": 480,
         "width": 480,
-        "height": 319
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 638
+        "height": 320
       },
       {
         "bound": 1600,
@@ -861,91 +834,23 @@
         "width": 2560,
         "height": 1702
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "e21af149096dd75c12db",
-    "title": "墙上的树影",
-    "caption": "阳光在白墙上留下枝叶的影子。",
-    "album": "city",
+    "id": "2eb0604a38918d264c8b",
+    "title": "窗前的花",
+    "caption": "窗前的花",
+    "album": "land",
     "event": "杂",
-    "date": "2024-11-23",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "afedb10bd317dfccdd1855c0-srgb-v1",
-    "width": 5184,
-    "height": 3888,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 360
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 720
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": "b2b21cb778b2804bed50",
-    "title": "双圆",
-    "caption": "两个圆窗与水面的倒影。",
-    "album": "water",
-    "event": "常州",
-    "date": "2024-11-30",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "dbf41af5c97cb361f08f56e5-srgb-v1",
-    "width": 6000,
-    "height": 4000,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1707
-      }
-    ]
-  },
-  {
-    "id": "d0cca03f15d3942af92c",
-    "title": "午后街角",
-    "caption": "树荫下的街角与座椅。",
-    "album": "city",
-    "event": "常州",
-    "date": "2024-11-30",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "9c5a4ce9fb5512e78158020d-srgb-v1",
+    "date": "2024-11-09",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "337640fb58c3ded945701c13-jpeg-v2",
     "width": 4000,
     "height": 6000,
     "variants": [
@@ -953,11 +858,6 @@
         "bound": 480,
         "width": 320,
         "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 640,
-        "height": 960
       },
       {
         "bound": 1600,
@@ -969,19 +869,128 @@
         "width": 1707,
         "height": 2560
       }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "7c002605aa47c29f9ffa",
+    "title": "水巷",
+    "caption": "水巷",
+    "album": "water",
+    "event": "杂",
+    "date": "2024-11-09",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "19e7305f2c153f49dfca17aa-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "5df07fe49ae3e860c79f",
+    "title": "江对岸",
+    "caption": "江对岸",
+    "album": "city",
+    "event": "上海万豪",
+    "date": "2024-11-24",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "68409dde57bec1d971ce8fd9-jpeg-v2",
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 480,
+        "height": 320
+      },
+      {
+        "bound": 1600,
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "bound": 2560,
+        "width": 2560,
+        "height": 1707
+      }
+    ],
+    "formats": [
+      "jpg"
+    ]
+  },
+  {
+    "id": "8a5b30aaa2aeb14c87c8",
+    "title": "一亭",
+    "caption": "一亭",
+    "album": "water",
+    "event": "常州",
+    "date": "2024-11-30",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "cf940e34cdd0ea61688281b0-jpeg-v2",
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "bound": 480,
+        "width": 320,
+        "height": 480
+      },
+      {
+        "bound": 1600,
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "bound": 2560,
+        "width": 1707,
+        "height": 2560
+      }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
     "id": "b5b9cf8fb46ea7bfab52",
     "title": "旧楼",
-    "caption": "蓝天下一座临水的旧楼。",
+    "caption": "旧楼",
     "album": "city",
     "event": "X100T",
     "date": "2024-12-02",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "b54ad844994ec386cbf7e6fb-srgb-v1",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "b54ad844994ec386cbf7e6fb-jpeg-v2",
     "width": 4896,
     "height": 3264,
     "variants": [
@@ -991,11 +1000,6 @@
         "height": 320
       },
       {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
         "bound": 1600,
         "width": 1600,
         "height": 1067
@@ -1005,19 +1009,23 @@
         "width": 2560,
         "height": 1707
       }
+    ],
+    "formats": [
+      "jpg"
     ]
   },
   {
-    "id": "1a39929a33721cf8f506",
-    "title": "临水",
-    "caption": "对岸建筑映在水中。",
-    "album": "water",
+    "id": "3910c5fdff29a5218d95",
+    "title": "叶与光",
+    "caption": "叶与光",
+    "album": "land",
     "event": "太平",
     "date": "2024-12-08",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "186ca6fb6ff8cababe1ead9b-srgb-v1",
+    "dateSource": "exif",
+    "included": true,
+    "decisionSource": "editorial",
+    "reason": "摄影书精选：已复看构图、光线与同题材取舍，并安排到书页顺序。",
+    "key": "8695712ff4a9cf8831d69e4d-jpeg-v2",
     "width": 4000,
     "height": 6000,
     "variants": [
@@ -1025,11 +1033,6 @@
         "bound": 480,
         "width": 320,
         "height": 480
-      },
-      {
-        "bound": 960,
-        "width": 640,
-        "height": 960
       },
       {
         "bound": 1600,
@@ -1041,42 +1044,9 @@
         "width": 1707,
         "height": 2560
       }
-    ]
-  },
-  {
-    "id": "8e1ba1e4b6f68cedeb55",
-    "title": "橙色花枝",
-    "caption": "枝叶间的小簇橙色花朵。",
-    "album": "land",
-    "event": "太平",
-    "date": "2024-12-08",
-    "dateSource": "folder",
-    "approved": false,
-    "reason": "画面结构与光线适合系列编排；需大图终审。",
-    "key": "7f31d5c3792413c8979c0f3b-srgb-v1",
-    "width": 6000,
-    "height": 4000,
-    "variants": [
-      {
-        "bound": 480,
-        "width": 480,
-        "height": 320
-      },
-      {
-        "bound": 960,
-        "width": 960,
-        "height": 640
-      },
-      {
-        "bound": 1600,
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "bound": 2560,
-        "width": 2560,
-        "height": 1707
-      }
+    ],
+    "formats": [
+      "jpg"
     ]
   }
 ]

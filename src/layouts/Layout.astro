@@ -10,7 +10,7 @@ const {title, description = kind==='frame' ? 'Sunlei 的自然与人文摄影集
   <a class="skip" href="#main">跳转到内容</a>
   <header class="site-header">
     <a class="wordmark" href="/" aria-label="返回首页">{kind==='frame' ? 'frame' : 'photo'}<span class="wordmark-dot">.</span></a>
-    <nav aria-label="主导航"><a href="/#collections">{kind==='frame' ? '摄影系列' : '家庭相册'}</a><a href="/about/">{kind==='frame' ? '关于' : '关于影集'}</a>{!publishing && <a class="review-link" href="/review/">选片台</a>}{publishing && kind==='photo' && <a href="/cdn-cgi/access/logout">退出登录</a>}</nav>
+    <nav aria-label="主导航"><a href="/#collections">{kind==='frame' ? '摄影书' : '家庭相册'}</a><a href="/about/">{kind==='frame' ? '关于' : '关于影集'}</a>{!publishing && <a class="review-link" href="/review/">整理影集</a>}{publishing && kind==='photo' && <a href="/cdn-cgi/access/logout">退出登录</a>}</nav>
   </header>
   <main id="main"><slot/></main>
   <footer class="site-footer"><a class="signature" href="/">Sunlei</a><p>{kind==='frame' ? '留住目光停下的地方。' : '把普通的日子，好好留下来。'}</p><a href="#main">回到顶部</a></footer>
@@ -20,7 +20,7 @@ const {title, description = kind==='frame' ? 'Sunlei 的自然与人文摄影集
   </dialog>
   <script>
     const dialog = document.querySelector<HTMLDialogElement>('#lightbox')!;
-    const pictures = [...document.querySelectorAll<HTMLButtonElement>('[data-full]')];
+    let pictures = [...document.querySelectorAll<HTMLButtonElement>('[data-full]')];
     const image = document.querySelector<HTMLImageElement>('#viewer-image')!;
     const caption = document.querySelector('#viewer-caption')!;
     const count = document.querySelector('#viewer-count')!;
@@ -31,7 +31,7 @@ const {title, description = kind==='frame' ? 'Sunlei 的自然与人文摄影集
       image.src = item.dataset.full!; image.alt = item.dataset.caption || '';
       caption.textContent = image.alt; count.textContent = `${position+1} / ${pictures.length}`;
     }
-    pictures.forEach((button,index)=>button.addEventListener('click',()=>{show(index);dialog.showModal();document.body.style.overflow='hidden';}));
+    document.addEventListener('click',event=>{const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-full]');if(!button)return;pictures=[...document.querySelectorAll<HTMLButtonElement>('[data-full]')];show(pictures.indexOf(button));dialog.showModal();document.body.style.overflow='hidden';});
     dialog.addEventListener('close',()=>{document.body.style.overflow='';});
     document.querySelector('#viewer-close')?.addEventListener('click',()=>dialog.close());
     document.querySelector('#viewer-prev')?.addEventListener('click',()=>show(position-1));

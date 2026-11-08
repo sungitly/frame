@@ -1,42 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Picture from '../components/Picture.astro';
-import {photos, publishing, kind, imageUrl} from '../lib/data';
-import selections from '../../content/selections.json';
+import {publishing, kind} from '../lib/data';
 if(publishing) return Astro.redirect('/');
 ---
-<Layout title="选片台"><section class="review-heading"><h1>选片台</h1><p>这是抽样初选，还不是全年最终结果。先看照片，确认取舍，再导出清单。更改保存在当前浏览器。</p><div class="review-tools"><label>查看 <select id="review-filter"><option value="all">全部候选</option><option value="pending">待确认</option><option value="approved">已确认</option><option value="excluded">已排除</option></select></label><button id="export" class="solid-button">导出选片清单</button><button id="reset" class="plain-button">重置本地修改</button><span id="review-status" aria-live="polite"></span></div><p class="review-note">日期暂取自活动目录；画面中的家庭关系、准确地点与日期，仍需你确认。导出不会自动发布。</p></section><div class="review-grid">{photos.map(p=><article class="review-item" data-id={p.id}><button class="image-button" data-full={imageUrl(p,2560,'jpg')} data-caption={p.caption} aria-label={`放大查看：${p.title}`}><Picture photo={p} sizes="(max-width:700px) 92vw, 30vw"/></button><h2>{p.title}</h2><p>{p.date} · {p.event}</p><p class="reason">{p.reason}</p><label>取舍<select data-decision><option value="pending">待确认</option><option value="approved">确认入选</option><option value="excluded">排除</option></select></label><label>标题<input data-title value={p.title}/></label><label>相册<input data-album value={p.album}/></label></article>)}</div></Layout>
-<script define:vars={{selections,kind}}>
-const key=`sunlei-${kind}-review-v1`;
-let changes={};
-try{changes=JSON.parse(localStorage.getItem(key)||'{}');}catch{}
-const cards=[...document.querySelectorAll('.review-item')];
-const status=document.querySelector('#review-status');
-function render(){
- let approved=0, excluded=0;
- const filter=document.querySelector('#review-filter').value;
- cards.forEach(card=>{
-   const original=selections.find(p=>p.id===card.dataset.id);
-   const change=changes[original.id]||{};
-   const decision=change.decision||(original.approved?'approved':'pending');
-   card.querySelector('[data-decision]').value=decision;
-   card.querySelector('[data-title]').value=change.title??original.title;
-   card.querySelector('[data-album]').value=change.album??original.album;
-   card.dataset.state=decision;card.hidden=filter!=='all'&&filter!==decision;
-   approved+=decision==='approved';excluded+=decision==='excluded';
- });
- status.textContent=`${approved} 张已确认 · ${excluded} 张已排除`;
-}
-cards.forEach(card=>card.addEventListener('change',()=>{
- changes[card.dataset.id]={decision:card.querySelector('[data-decision]').value,title:card.querySelector('[data-title]').value,album:card.querySelector('[data-album]').value};
- try{localStorage.setItem(key,JSON.stringify(changes));render();}catch{status.textContent='浏览器未能保存，请立即导出清单。';}
-}));
-document.querySelector('#review-filter').addEventListener('change',render);
-document.querySelector('#reset').addEventListener('click',()=>{if(confirm('清除当前浏览器中的选片修改？原始初选仍会保留。')){changes={};localStorage.removeItem(key);render();}});
-document.querySelector('#export').addEventListener('click',()=>{
- const result=selections.flatMap(p=>{const c=changes[p.id]||{};if(c.decision==='excluded')return [];return [{...p,title:c.title??p.title,album:c.album??p.album,approved:c.decision?c.decision==='approved':p.approved}];});
- const blob=new Blob([JSON.stringify({site:kind,version:1,selections:result},null,2)],{type:'application/json'});
- const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`${kind}-selections.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-});
-render();
+<Layout title="整理影集"><section class="studio" data-kind={kind}>
+<header class="studio-heading"><div><p class="eyebrow">2024 · 本地照片库</p><h1>整理影集</h1><p>{kind==='frame'?'摄影书已完成初选与编排。你可以从整个照片库补充作品，也可以移出已选照片。':'已自动保留日常与旅行，合并高度重复的画面。你可以随时补充或移出照片。'}</p></div><div class="studio-actions"><a class="plain-button" href="/api/export" download={`${kind}-selections.json`}>备份取舍</a><button class="solid-button" id="apply">更新影集</button></div></header>
+<div class="studio-tabs" role="group" aria-label="筛选照片"><button data-state="included" aria-pressed="true">已入选</button><button data-state="excluded" aria-pressed="false">未入选</button><button data-state="duplicates" aria-pressed="false">重复照片</button><button data-state="all" aria-pressed="false">全部</button></div>
+<div class="studio-filters"><label>活动 <select id="event"><option value="">所有活动</option></select></label><label>搜索 <input id="search" type="search" placeholder="文件名、标题、活动"/></label><span id="total"></span></div>
+<p id="status" class="studio-status" role="status" aria-live="polite">正在读取照片库…</p>
+<div class="studio-batch"><label><input type="checkbox" id="select-page"/> 选择本页</label><span id="selected-count">0 张</span><button data-batch="keep">加入影集</button><button data-batch="remove">移出影集</button><button data-batch="reset">恢复初选</button></div>
+<div id="cards" class="studio-grid" aria-busy="true"></div><p id="empty" class="studio-empty" hidden>没有符合条件的照片。</p>
+<nav class="studio-pagination" aria-label="照片列表分页"><button id="prev">上一页</button><span id="page"></span><button id="next">下一页</button></nav>
+<p>增删仅影响本站影集，原始 JPG 始终保留在 NAS。修改会自动保存；点击“更新影集”后应用到本地网站。</p>
+</section>
+<dialog id="edit-photo"><form id="edit-form"><h2>调整照片信息</h2><label>标题<input id="edit-title" required maxlength="120"/></label><label>相册<select id="edit-album"></select></label><p id="edit-error" role="alert"></p><div class="studio-actions"><button type="button" id="edit-cancel">取消</button><button class="solid-button" type="submit">保存</button></div></form></dialog>
+</Layout>
+<script>
+ const $=(s:string)=>document.querySelector(s)!;
+ const kind=($('.studio') as HTMLElement).dataset.kind;
+ const grid=$('#cards') as HTMLElement,status=$('#status') as HTMLElement;
+ let state='included',page=0,total=0,rows:any[]=[],selected=new Set<string>(),busy=false,request=0,editing:any=null;
+ let albums:Record<string,string>={};
+ const el=(tag:string,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
+ function message(text:string,error=false){status.textContent=text;status.dataset.error=String(error);}
+ async function api(path:string,body?:any){const response=await fetch(path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);if(!response.headers.get('content-type')?.includes('application/json'))throw Error('请使用 npm run studio 启动本地整理服务。');const data=await response.json();if(!response.ok)throw Error(data.error||'请求失败');return data;}
+ function batchState(){ $('#selected-count').textContent=`${selected.size} 张`;document.querySelectorAll<HTMLButtonElement>('[data-batch]').forEach(b=>b.disabled=busy||!selected.size);($('#select-page') as HTMLInputElement).checked=rows.length>0&&selected.size===rows.length; }
+ function jobStatus(job:any){busy=job.running;const apply=$('#apply') as HTMLButtonElement;apply.disabled=busy;apply.textContent=busy?'正在更新…':'更新影集';if(job.error)message(job.error,true);else message(busy?'正在生成展示照片并更新影集，请稍候。':job.dirty?'修改已保存。点击“更新影集”后，在网站中查看结果。':'影集已是最新。可以直接浏览，也可以继续调整。');batchState();}
+ function render(){grid.replaceChildren();selected.clear();batchState();for(const p of rows){const card=el('article');card.className='studio-card';card.dataset.included=String(p.included);card.dataset.id=p.id;
+ const preview=el('div');preview.className='studio-preview';const zoom=el('button');zoom.className='image-button';zoom.dataset.full=`/library-media/${p.id}.jpg?large=1`;zoom.dataset.caption=`${p.title} · ${p.date}`;zoom.setAttribute('aria-label',`放大查看：${p.title}`);const img=el('img') as HTMLImageElement;img.src=`/library-media/${p.id}.jpg`;img.alt=p.title;img.loading='lazy';zoom.append(img);preview.append(zoom);
+ const label=el('label');label.className='pick-box';const checkbox=el('input') as HTMLInputElement;checkbox.type='checkbox';checkbox.setAttribute('aria-label',`选择 ${p.title}`);checkbox.addEventListener('change',()=>{checkbox.checked?selected.add(p.id):selected.delete(p.id);batchState();});label.append(checkbox);preview.append(label);card.append(preview,el('h2',p.title),el('p',`${p.date} · ${p.eventTitle}`));
+ const reason=el('p',p.manual?'你的调整优先于自动结果。':p.reason);reason.className='decision-reason';card.append(reason);const controls=el('div');controls.className='card-controls';const toggle=el('button',p.included?'移出':'加入');toggle.className='toggle-pick';toggle.disabled=busy||!!p.error;toggle.addEventListener('click',()=>decide({ids:[p.id],included:!p.included}));const edit=el('button','编辑');edit.disabled=busy;edit.addEventListener('click',()=>{editing=p;($('#edit-title') as HTMLInputElement).value=p.title;const select=$('#edit-album') as HTMLSelectElement;select.replaceChildren();for(const [value,title]of Object.entries(albums)){const option=new Option(title,value);select.add(option);}select.value=p.album;if(!select.value)select.selectedIndex=0;$('#edit-error').textContent='';($('#edit-photo') as HTMLDialogElement).showModal();});controls.append(toggle,edit);if(p.manual){const reset=el('button','恢复初选');reset.disabled=busy;reset.addEventListener('click',()=>decide({ids:[p.id],reset:true}));controls.append(reset);}card.append(controls);
+ if(p.duplicateOf){const compare=el('button','查看保留的那张');compare.className='duplicate-link';compare.dataset.full=`/library-media/${p.duplicateOf}.jpg?large=1`;compare.dataset.caption='同组保留照片';card.append(compare);}grid.append(card);}
+ ($('#empty') as HTMLElement).hidden=!!rows.length;$('#page').textContent=`${page+1} / ${Math.max(1,Math.ceil(total/60))}`;($('#prev') as HTMLButtonElement).disabled=page===0;($('#next') as HTMLButtonElement).disabled=(page+1)*60>=total;grid.setAttribute('aria-busy','false');}
+ async function load(){const token=++request;grid.setAttribute('aria-busy','true');try{const query=new URLSearchParams({state,page:String(page),event:($('#event') as HTMLSelectElement).value,q:($('#search') as HTMLInputElement).value});const data=await api('/api/library?'+query);if(token!==request)return;if(page>0&&page*60>=data.total){page=Math.max(0,Math.ceil(data.total/60)-1);return load();}rows=data.photos;total=data.total;const events=$('#event') as HTMLSelectElement;if(events.options.length===1){for(const [value,title]of Object.entries(data.events)){events.add(new Option(`${value.slice(0,4)}-${value.slice(4,6)}-${value.slice(6,8)} · ${title}`,value));}}albums=kind==='frame'?{water:'水边的城',land:'草木有时',city:'在别处'}:Object.fromEntries(Object.entries(data.events).map(([key,value])=>[key.slice(0,8),`${key.slice(4,6)}.${key.slice(6,8)} · ${value}`]));$('#total').textContent=`${total.toLocaleString()} 张`;document.querySelectorAll<HTMLButtonElement>('[data-state]').forEach(b=>{const labels:any={included:'已入选',excluded:'未入选',duplicates:'重复照片',all:'全部'};b.textContent=`${labels[b.dataset.state!]} ${data.counts[b.dataset.state!]}`;b.setAttribute('aria-pressed',String(b.dataset.state===state));});jobStatus(data.job);render();}catch(e){message(String(e),true);grid.setAttribute('aria-busy','false');}}
+ async function decide(body:any){if(busy)return;try{await api('/api/decision',body);await load();}catch(e){message(String(e),true);}}
+ document.querySelectorAll<HTMLButtonElement>('[data-state]').forEach(b=>b.addEventListener('click',()=>{state=b.dataset.state!;page=0;load();}));$('#event').addEventListener('change',()=>{page=0;load();});let timer:ReturnType<typeof setTimeout>;$('#search').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{page=0;load();},250);});$('#prev').addEventListener('click',()=>{page--;load();});$('#next').addEventListener('click',()=>{page++;load();});$('#select-page').addEventListener('change',e=>{const checked=(e.target as HTMLInputElement).checked;selected=checked?new Set(rows.map(p=>p.id)):new Set();grid.querySelectorAll<HTMLInputElement>('input[type=checkbox]').forEach(c=>c.checked=checked);batchState();});document.querySelectorAll<HTMLButtonElement>('[data-batch]').forEach(b=>b.addEventListener('click',()=>decide({ids:[...selected],...(b.dataset.batch==='reset'?{reset:true}:{included:b.dataset.batch==='keep'})})));
+ $('#edit-cancel').addEventListener('click',()=>($('#edit-photo') as HTMLDialogElement).close());$('#edit-form').addEventListener('submit',async e=>{e.preventDefault();try{await api('/api/decision',{ids:[editing.id],title:($('#edit-title') as HTMLInputElement).value,album:($('#edit-album') as HTMLSelectElement).value});($('#edit-photo') as HTMLDialogElement).close();await load();}catch(e){$('#edit-error').textContent=String(e);}});
+ $('#apply').addEventListener('click',async()=>{try{jobStatus(await api('/api/apply',{}));render();const poll=async()=>{try{const job=await api('/api/status');jobStatus(job);if(job.running)setTimeout(poll,1500);else await load();}catch(e){message(String(e),true);}};setTimeout(poll,1500);}catch(e){message(String(e),true);}});load();
 </script>

@@ -1,16 +1,38 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Picture from '../../components/Picture.astro';
-import {albums, kind, imageUrl} from '../../lib/data';
+import {albums,kind,imageUrl} from '../../lib/data';
 export function getStaticPaths(){return albums.map(album=>({params:{id:album.id},props:{album}}));}
 const {album}=Astro.props;
-const position = albums.findIndex(a=>a.id===album.id);
-const next = albums[(position+1)%albums.length];
+const spreads=[];
+for(let i=0;i<album.photos.length;i+=2)spreads.push(album.photos.slice(i,i+2));
+const rows=[];let row=[];let ratio=0;
+for(const photo of album.photos){row.push(photo);ratio+=photo.width/photo.height;if(ratio>=4.6){rows.push(row);row=[];ratio=0;}}
+if(row.length)rows.push(row);
 ---
 <Layout title={album.title} description={album.description}>
-  <header class="album-heading"><a class="back-link" href="/#collections">返回{kind==='frame'?'系列':'相册'}</a><h1>{album.title}</h1><p>{album.description} <span>· {album.photos.length} {kind==='frame'?'幅':'张'}</span></p></header>
-  <div class:list={['photo-sequence',kind==='photo' && 'family-sequence']}>
-    {album.photos.map((p,i)=><figure class:list={['photo-figure',p.width<p.height && 'portrait']}><button class="image-button" data-full={imageUrl(p,2560,'jpg')} data-caption={p.caption} aria-label={`全屏查看：${p.title}`}><Picture photo={p} eager={i===0} sizes="(max-width:700px) 92vw, 80vw"/></button><figcaption><span>{p.title}</span><span>{String(i+1).padStart(2,'0')}</span></figcaption></figure>)}
-  </div>
-  {albums.length>1 && <a class="next-album" href={`/albums/${next.id}/`}><span>接着看</span><h2>{next.title}</h2></a>}
+{kind==='frame'?<div class="book-view">
+  <div class="book-toolbar"><a href="/#collections">返回书架</a><h1>{album.title}</h1><span>{album.photos.length} 幅作品</span></div>
+  <section class="book-reader" aria-label={`${album.title}摄影书`}>
+    <div class="spread title-spread" data-spread="0"><div class="paper-page title-page"><h2>{album.title}</h2><p>{album.subtitle}</p><span>{album.description}</span><small>摄影 / Sunlei</small></div><div class="paper-page image-page"><button class="image-button" data-full={imageUrl(album.cover,2560)} data-caption={album.cover.caption} aria-label={`放大查看：${album.cover.title}`}><Picture photo={album.cover} eager sizes="(max-width:700px) 88vw, 40vw"/></button></div></div>
+    {spreads.map((pair,i)=><div class="spread" data-spread={i+1} hidden>{pair.map((p,j)=><div class="paper-page image-page"><button class="image-button" data-full={imageUrl(p,2560)} data-caption={p.caption} aria-label={`放大查看：${p.title}`}><Picture photo={p} sizes="(max-width:700px) 88vw, 40vw"/></button><span class="folio">{i*2+j+1}</span></div>)}{pair.length===1 && <div class="paper-page last-page"><p>{album.title}</p><small>Sunlei · 2024</small></div>}</div>)}
+  </section>
+  <div class="book-controls"><button id="book-prev" disabled>上一页</button><label>翻到 <select id="book-jump" aria-label="跳转到页">{Array.from({length:spreads.length+1},(_,i)=><option value={i}>{i===0?'扉页':`${i*2-1}–${Math.min(i*2,album.photos.length)} 页`}</option>)}</select></label><span id="book-position" aria-live="polite">扉页</span><button id="book-next">下一页</button></div>
+  <noscript><style>.spread[hidden]{display:grid;margin-top:30px}.book-controls{display:none}</style></noscript>
+</div>:<div class="memory-view"><header class="memory-heading"><a href="/#collections">返回所有相册</a><h1>{album.title}</h1><p>{album.subtitle} <span>{album.photos.length} 张照片</span></p></header><section class="album-contact" aria-label="相册照片">{rows.map(group=><div class="contact-row">{group.map(p=><figure style={`--ratio:${p.width/p.height}`}><button class="image-button" data-full={imageUrl(p,2560)} data-caption={`${album.title} · ${p.date}`} aria-label={`放大查看：${p.title}`}><Picture photo={p} sizes="(max-width:600px) 46vw, 28vw"/></button></figure>)}</div>)}</section></div>}
 </Layout>
+<script>
+  const reader=document.querySelector<HTMLElement>('.book-reader');
+  if(reader){
+    const spreads=[...reader.querySelectorAll<HTMLElement>('[data-spread]')];
+    const prev=document.querySelector<HTMLButtonElement>('#book-prev')!;
+    const next=document.querySelector<HTMLButtonElement>('#book-next')!;
+    const jump=document.querySelector<HTMLSelectElement>('#book-jump')!;
+    let current=0;
+    function show(index:number){current=Math.max(0,Math.min(spreads.length-1,index));spreads.forEach((s,i)=>s.hidden=i!==current);prev.disabled=current===0;next.disabled=current===spreads.length-1;jump.value=String(current);document.querySelector('#book-position')!.textContent=jump.selectedOptions[0].textContent;history.replaceState(null,'',`#page-${current}`);}
+    const requested=Number(location.hash.replace('#page-',''));if(Number.isInteger(requested))show(requested);
+    prev.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));jump.addEventListener('change',()=>show(Number(jump.value)));
+    document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]') || (e.target instanceof HTMLElement && ['INPUT','SELECT','TEXTAREA','BUTTON'].includes(e.target.tagName)))return;if(e.key==='ArrowRight'){e.preventDefault();show(current+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1);}});
+    let x=0,y=0;reader.addEventListener('touchstart',e=>{x=e.changedTouches[0].clientX;y=e.changedTouches[0].clientY;},{passive:true});reader.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x,dy=e.changedTouches[0].clientY-y;if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.5)show(current+(dx<0?1:-1));},{passive:true});
+  }
+</script>

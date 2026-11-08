@@ -1,17 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Picture from '../components/Picture.astro';
-import {kind, featured, hero, imageUrl} from '../lib/data';
+import {kind,featured,photos} from '../lib/data';
+const months=[...new Set(featured.map(a=>a.date.slice(0,7)))];
 ---
-<Layout title={kind==='frame' ? '目光所至' : '那些在一起的日子'}>
-{kind==='frame' ? <>
-  <section class="frame-intro"><h1>目光所至<span>Somewhere, slowly.</span></h1><p>自然、人文与日常里的片刻。<br/>摄影 / Sunlei</p></section>
-  <figure class="frame-hero"><button class="image-button" data-full={imageUrl(hero,2560,'jpg')} data-caption={hero.caption} aria-label={`全屏查看：${hero.title}`}><Picture photo={hero} eager hero sizes="92vw"/></button><figcaption><span>{hero.title}</span><span>2024</span></figcaption></figure>
-  <section id="collections" class="collections"><div class="section-heading"><h2>摄影系列</h2><p>2024 · Selected photographs</p></div>
-    {featured.map((album,i)=><article class={`series-row series-${i}`}><a class="series-image" href={`/albums/${album.id}/`}><Picture photo={album.cover} sizes="(max-width: 700px) 92vw, 58vw"/></a><div class="series-copy"><h3><a href={`/albums/${album.id}/`}>{album.title}</a></h3><p>{album.description}</p><a class="text-link" href={`/albums/${album.id}/`}>浏览系列 <span>{album.photos.length} 幅</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>)}
+<Layout title={kind==='frame'?'摄影书':'我们的相册'}>
+{kind==='frame'?<div class="book-library">
+  <header class="library-heading"><div><h1>摄影书</h1><p>把目光停留的地方，编成一本本书。</p></div><span>Sunlei · 2024</span></header>
+  <section class="bookshelf" id="collections" aria-label="摄影书目录">
+    {featured.map(book=><article class="book-item"><a class="book-cover" style={`--cloth:${book.color}`} href={`/albums/${book.id}/`} aria-label={`翻开《${book.title}》`}><div class="cover-type"><h2>{book.title}</h2><p>{book.subtitle}</p></div><div class="cover-photo"><Picture photo={book.cover} eager sizes="(max-width:600px) 80vw, 28vw"/></div><div class="cover-colophon"><span>PHOTOGRAPHS</span><span>SUNLEI</span></div></a><div class="book-label"><p>{book.description}</p><a href={`/albums/${book.id}/`}>翻开这本书 <span>{book.photos.length} 幅作品</span></a></div></article>)}
   </section>
-</> : <>
-  <section class="family-intro"><div><h1>那些在一起<br/><em>的日子。</em></h1><p>有远方，也有家里的小小日常。<br/>一张张照片，慢慢翻。</p><a class="text-link" href="#collections">翻开我们的相册 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></a></div><figure><button class="image-button" data-full={imageUrl(hero,2560,'jpg')} data-caption={hero.caption} aria-label="全屏查看家庭相聚照片"><Picture photo={hero} eager hero sizes="(max-width:700px) 92vw, 58vw"/></button><figcaption>{hero.date.slice(0,7).replace('-', ' / ')} <span>{hero.title}</span></figcaption></figure></section>
-  <section id="collections" class="family-collections"><div class="section-heading"><h2>我们的 2024</h2><p>{featured.length} 本相册</p></div><div class="album-grid">{featured.map(album=><a class="album-card" href={`/albums/${album.id}/`}><div class="album-cover"><Picture photo={album.cover} sizes="(max-width:700px) 92vw, 30vw"/></div><div class="album-info"><h3>{album.title}</h3><span>{album.photos.length} 张</span></div><p>{album.description}</p></a>)}</div></section>
-</>}
+  <p class="library-end">每一本书，都有自己的观看顺序。</p>
+</div>:<div class="album-library">
+  <header class="library-heading"><div><h1>我们的相册</h1><p>旅行、相聚，还有平常的一天。</p></div><div class="year-label">2024<span>{featured.length} 本相册 · {photos.length} 张照片</span></div></header>
+  <nav class="month-index" aria-label="按月份浏览">{months.map(month=><a href={`#month-${month}`}>{Number(month.slice(5))} 月</a>)}</nav>
+  <section id="collections">{months.map(month=><section class="month-group" id={`month-${month}`}><h2>{Number(month.slice(5))} 月 <span>2024</span></h2><div class="memory-albums">{featured.filter(a=>a.date.startsWith(month)).map(album=><a class="memory-album" href={`/albums/${album.id}/`}><div class="album-stack"><Picture photo={album.cover} sizes="(max-width:600px) 44vw, 23vw"/><span class="album-count">{album.photos.length} 张</span></div><h3>{album.title}</h3><p>{album.subtitle}</p></a>)}</div></section>)}</section>
+</div>}
 </Layout>

@@ -1,26 +1,7 @@
-# Sunlei Photos
-<!-- impeccable:product-schema 1 -->
+# Product
 
-## Platform
-web
+Frame is a public shelf of photography books. Each book has a cover, title page, carefully ordered two-page spreads, and full-screen viewing. Select strictly for composition, light, distinctness and thematic fit; the agent does the initial selection.
 
-## Stack
-Astro + TypeScript, local Python/Pillow processing, Cloudflare Workers and R2, GitHub. User accepted the proposed architecture and requested execution.
+Photo is a private family album library grouped by year/month and event. Preserve ordinary moments broadly, including travel context and scenes. Reject clear failures and highly similar duplicates conservatively. Do not require the user to approve every photo.
 
-## Users
-Sunlei curates personal photographs from a NAS. Visitors view frame.sunlei.page as a photography portfolio; family members browse photo.sunlei.page by year and event.
-
-## Product Purpose
-Turn years of personal photographs into two deliberately curated collections with a reproducible publishing workflow.
-
-## Capabilities and Constraints
-Only JPG/JPEG sources. Never modify NAS originals. Preserve image proportions and existing photographic color. Family site defaults to private access; exact login audience is pending. Local previews may display candidate selections; production must contain only approved selections. Sources and credentials stay out of Git. Domain is managed by Cloudflare. Repositories are sungitly/frame (public) and sungitly/photo (private). Cloudflare login and family email allowlist remain pending.
-
-## Brand Commitments
-The accepted proposal is a quiet, spacious photography book for frame and an intimate chronological album for photo. Use actual photographs, never generated substitutes. User said to proceed with the proposal; further aesthetic approval rounds are unnecessary.
-
-## Evidence on Hand
-2024 NAS inventory: 5,193 JPG files. Initial 24-image sample includes travel, street scenes and family moments. Directory names are hints, not authoritative subject labels.
-
-## Product Principles
-Keep originals intact. Make curation reversible. Separate public from private. Show photos before interface. Do not invent family identities or captions.
+A local-only curation studio exposes the entire JPG library, including excluded items. Manual additions/removals and metadata edits persist independently from automatic decisions; rebuilding applies them to the local site. Originals are never edited. Public deployment has no write APIs. Cloudflare Access protects every family page and photo. Source and selected metadata go to GitHub; derivatives go to private R2. RAW, credentials, source paths and full-library caches stay out of Git.

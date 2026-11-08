@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));
-const catalog=read('content/catalog.json').filter(p=>p.approved);
-if(!catalog.length) throw Error('没有确认照片，停止发布。');
+const catalog=read('content/catalog.json').filter(p=>p.included ?? p.approved);
+if(!catalog.length) throw Error('没有入选照片，停止发布。');
 const config=read('wrangler.json');
 const uploaded=read('content/uploaded.json');
 if(uploaded.bucket!==config.r2_buckets[0].bucket_name) throw Error('上传 bucket 不匹配');
 const keys=new Set(uploaded.keys);
-for(const photo of catalog) for(const size of [480,960,1600,2560]) for(const ext of ['jpg','webp']) if(!keys.has(`${photo.key}/${size}.${ext}`)) throw Error(`照片 ${photo.id} 尚未完成上传`);
+for(const photo of catalog) for(const size of photo.variants.map(v=>v.bound)) for(const ext of (photo.formats || ['jpg','webp'])) if(!keys.has(`${photo.key}/${size}.${ext}`)) throw Error(`照片 ${photo.id} 尚未完成上传`);
 if(read('site.json').kind==='photo' && (!config.vars?.ACCESS_TEAM_DOMAIN || !config.vars?.ACCESS_AUD)) throw Error('家庭站 Access 尚未配置');
 console.log(`发布检查通过：${catalog.length} 张照片都有上传记录。`);

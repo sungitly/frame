@@ -73,6 +73,9 @@ def srgb_image(path):
         return image.copy()
 
 def prepare():
+    if (LOCAL/'library.json').exists():
+        from curation import materialize
+        return materialize()
     inventory = json.loads((LOCAL / 'inventory.json').read_text())
     indexed = {row['id']: row for row in inventory['photos']}
     selected = json.loads((ROOT / 'content/selections.json').read_text())

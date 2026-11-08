@@ -3,7 +3,7 @@ import config from '../site.json';
 import catalog from '../content/catalog.json';
 
 type Env = { ASSETS: { fetch(request: Request): Promise<Response> }; PHOTOS: any; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string };
-const allowed = new Set(catalog.filter(p=>p.approved).flatMap(p => [480,960,1600,2560].flatMap(size => ['jpg','webp'].map(format => `${p.key}/${size}.${format}`))));
+const allowed = new Set(catalog.filter((p:any)=>p.included ?? p.approved).flatMap((p:any) => p.variants.flatMap((v:any) => (p.formats || ['jpg','webp']).map((format:string) => `${p.key}/${v.bound}.${format}`))));
 const keysets = new Map<string, ReturnType<typeof createRemoteJWKSet>>();
 const privateSite = config.kind === 'photo';
 
@@ -35,7 +35,7 @@ export default {
     if(privateSite && !(await authorized(request,env))) return secure(new Response('请通过家庭影集的登录入口访问。',{status:401}));
     if(!['GET','HEAD'].includes(request.method)) return secure(new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}}));
     const url = new URL(request.url);
-    if(url.pathname.startsWith('/review')) return secure(new Response('Not found',{status:404}));
+    if(['/review','/api/','/library-media/'].some(prefix=>url.pathname.startsWith(prefix))) return secure(new Response('Not found',{status:404}));
     if(url.pathname.startsWith('/media/')) {
       const key = url.pathname.slice(7);
       if(!allowed.has(key)) return secure(new Response('Not found',{status:404}));

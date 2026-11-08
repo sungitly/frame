@@ -1,0 +1,59 @@
+{
+  "water": {
+    "title": "水边的城",
+    "subtitle": "江南 · 2024",
+    "description": "沿着水岸与街巷，缓慢地走。",
+    "color": "#59665d",
+    "photoIds": [
+      "7685ed2ca1025c93feb9",
+      "c1022b1ae5b498e6335e",
+      "c0b0eb867e77f69a1d35",
+      "3079d698e56e349dbe8e",
+      "aad2b05d450bcedd3dd1",
+      "8a5b30aaa2aeb14c87c8",
+      "10793a09a8b2caf0612d",
+      "7c002605aa47c29f9ffa",
+      "af50c896c33e0fb8f4cf",
+      "67bbe63d5e82915e6d52"
+    ],
+    "coverId": "c1022b1ae5b498e6335e"
+  },
+  "land": {
+    "title": "草木有时",
+    "subtitle": "四季 · 2024",
+    "description": "花开、树影和光落下的地方。",
+    "color": "#8a774b",
+    "photoIds": [
+      "68cf03e064983e0346d2",
+      "32c9d62a15570181bfc0",
+      "578e205ec80ef7642f62",
+      "8f488fe31c05eb5bb780",
+      "4d0cfc19ee61ed77bbd8",
+      "2eb0604a38918d264c8b",
+      "fc8822de89f08f4ea26e",
+      "6ba920a6ce9bc0c0d022",
+      "3910c5fdff29a5218d95",
+      "1b73199b4cf2bc95f580"
+    ],
+    "coverId": "578e205ec80ef7642f62"
+  },
+  "city": {
+    "title": "在别处",
+    "subtitle": "旅途 · 2024",
+    "description": "从熟悉的日常，走向另一处风景。",
+    "color": "#6b737b",
+    "photoIds": [
+      "e2d1403c62a8d0f96a35",
+      "2272627ac3430ab5e844",
+      "2039d9ee209d58cbd8a5",
+      "5d6db35d49370a0c6089",
+      "16ba37c7153d1deb0e95",
+      "3aa8f89e3a1e07c53447",
+      "9ccfd7a34f7031cd788d",
+      "b5b9cf8fb46ea7bfab52",
+      "5df07fe49ae3e860c79f",
+      "0e172a277ed65ef8d334"
+    ],
+    "coverId": "9ccfd7a34f7031cd788d"
+  }
+}
