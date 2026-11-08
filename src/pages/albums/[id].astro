@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Picture from '../../components/Picture.astro';
+import {albums, kind, imageUrl} from '../../lib/data';
+export function getStaticPaths(){return albums.map(album=>({params:{id:album.id},props:{album}}));}
+const {album}=Astro.props;
+const position = albums.findIndex(a=>a.id===album.id);
+const next = albums[(position+1)%albums.length];
+---
+<Layout title={album.title} description={album.description}>
+  <header class="album-heading"><a class="back-link" href="/#collections">返回{kind==='frame'?'系列':'相册'}</a><h1>{album.title}</h1><p>{album.description} <span>· {album.photos.length} {kind==='frame'?'幅':'张'}</span></p></header>
+  <div class:list={['photo-sequence',kind==='photo' && 'family-sequence']}>
+    {album.photos.map((p,i)=><figure class:list={['photo-figure',p.width<p.height && 'portrait']}><button class="image-button" data-full={imageUrl(p,2560,'jpg')} data-caption={p.caption} aria-label={`全屏查看：${p.title}`}><Picture photo={p} eager={i===0} sizes="(max-width:700px) 92vw, 80vw"/></button><figcaption><span>{p.title}</span><span>{String(i+1).padStart(2,'0')}</span></figcaption></figure>)}
+  </div>
+  {albums.length>1 && <a class="next-album" href={`/albums/${next.id}/`}><span>接着看</span><h2>{next.title}</h2></a>}
+</Layout>

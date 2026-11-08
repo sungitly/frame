@@ -1,0 +1,9 @@
+---
+import { imageUrl } from '../lib/data';
+const { photo, eager = false, sizes = '(max-width: 700px) 92vw, 70vw', hero = false } = Astro.props;
+const variants = photo.variants.filter((v, i, all) => all.findIndex(a=>a.width===v.width) === i);
+---
+<picture>
+  <source type="image/webp" srcset={variants.map(v=>`${imageUrl(photo,v.bound)} ${v.width}w`).join(', ')} sizes={sizes}/>
+  <img src={imageUrl(photo,1600,'jpg')} srcset={variants.map(v=>`${imageUrl(photo,v.bound,'jpg')} ${v.width}w`).join(', ')} sizes={sizes} alt={photo.caption} width={photo.width} height={photo.height} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={hero ? 'high' : 'auto'} />
+</picture>

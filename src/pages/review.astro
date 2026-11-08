@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Picture from '../components/Picture.astro';
+import {photos, publishing, kind, imageUrl} from '../lib/data';
+import selections from '../../content/selections.json';
+if(publishing) return Astro.redirect('/');
+---
+<Layout title="选片台"><section class="review-heading"><h1>选片台</h1><p>这是抽样初选，还不是全年最终结果。先看照片，确认取舍，再导出清单。更改保存在当前浏览器。</p><div class="review-tools"><label>查看 <select id="review-filter"><option value="all">全部候选</option><option value="pending">待确认</option><option value="approved">已确认</option><option value="excluded">已排除</option></select></label><button id="export" class="solid-button">导出选片清单</button><button id="reset" class="plain-button">重置本地修改</button><span id="review-status" aria-live="polite"></span></div><p class="review-note">日期暂取自活动目录；画面中的家庭关系、准确地点与日期，仍需你确认。导出不会自动发布。</p></section><div class="review-grid">{photos.map(p=><article class="review-item" data-id={p.id}><button class="image-button" data-full={imageUrl(p,2560,'jpg')} data-caption={p.caption} aria-label={`放大查看：${p.title}`}><Picture photo={p} sizes="(max-width:700px) 92vw, 30vw"/></button><h2>{p.title}</h2><p>{p.date} · {p.event}</p><p class="reason">{p.reason}</p><label>取舍<select data-decision><option value="pending">待确认</option><option value="approved">确认入选</option><option value="excluded">排除</option></select></label><label>标题<input data-title value={p.title}/></label><label>相册<input data-album value={p.album}/></label></article>)}</div></Layout>
+<script define:vars={{selections,kind}}>
+const key=`sunlei-${kind}-review-v1`;
+let changes={};
+try{changes=JSON.parse(localStorage.getItem(key)||'{}');}catch{}
+const cards=[...document.querySelectorAll('.review-item')];
+const status=document.querySelector('#review-status');
+function render(){
+ let approved=0, excluded=0;
+ const filter=document.querySelector('#review-filter').value;
+ cards.forEach(card=>{
+   const original=selections.find(p=>p.id===card.dataset.id);
+   const change=changes[original.id]||{};
+   const decision=change.decision||(original.approved?'approved':'pending');
+   card.querySelector('[data-decision]').value=decision;
+   card.querySelector('[data-title]').value=change.title??original.title;
+   card.querySelector('[data-album]').value=change.album??original.album;
+   card.dataset.state=decision;card.hidden=filter!=='all'&&filter!==decision;
+   approved+=decision==='approved';excluded+=decision==='excluded';
+ });
+ status.textContent=`${approved} 张已确认 · ${excluded} 张已排除`;
+}
+cards.forEach(card=>card.addEventListener('change',()=>{
+ changes[card.dataset.id]={decision:card.querySelector('[data-decision]').value,title:card.querySelector('[data-title]').value,album:card.querySelector('[data-album]').value};
+ try{localStorage.setItem(key,JSON.stringify(changes));render();}catch{status.textContent='浏览器未能保存，请立即导出清单。';}
+}));
+document.querySelector('#review-filter').addEventListener('change',render);
+document.querySelector('#reset').addEventListener('click',()=>{if(confirm('清除当前浏览器中的选片修改？原始初选仍会保留。')){changes={};localStorage.removeItem(key);render();}});
+document.querySelector('#export').addEventListener('click',()=>{
+ const result=selections.flatMap(p=>{const c=changes[p.id]||{};if(c.decision==='excluded')return [];return [{...p,title:c.title??p.title,album:c.album??p.album,approved:c.decision?c.decision==='approved':p.approved}];});
+ const blob=new Blob([JSON.stringify({site:kind,version:1,selections:result},null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`${kind}-selections.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+render();
+</script>

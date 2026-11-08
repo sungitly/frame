@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {kind} from '../lib/data';
+---
+<Layout title="关于"><article class="about"><h1>{kind==='frame'?'关于目光，关于停留。':'把日子留下来。'}</h1>{kind==='frame'?<><p>这是 Sunlei 的摄影集。</p><p>从自然风景到城市街巷，收集那些值得停下来看一看的片刻。照片按主题编排，也保留各自原本的色彩与比例。</p><p>第一辑，从 2024 年开始。</p></>:<><p>这是 Sunlei 的家庭影集。</p><p>旅行、团聚，还有平常的一天。按活动收在一起，留给我们慢慢回看。</p><p>这里的照片仅供登录后的家人浏览。</p></>}<a class="text-link" href="/">回到影集</a></article></Layout>
